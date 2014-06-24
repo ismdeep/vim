@@ -1,4 +1,4 @@
-sudo apt-get install vim vim-gnome
-sudo cp vimrc /etc/vim
-sudo cp *.vim /usr/share/vim/vim73[vim74]/colors
+apt-get install vim vim-gnome
+cp vimrc /etc/vim
+cp *.vim /usr/share/vim/vim73[vim74]/colors
 
