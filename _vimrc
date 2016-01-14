@@ -137,40 +137,6 @@ source $VIMRUNTIME/menu.vim
 language messages zh_CN.utf-8
 
 
-" ======= 引号 && 括号自动匹配 ======= "
-
-:inoremap ( ()<ESC>i
-
-:inoremap ) <c-r>=ClosePair(')')<CR>
-
-:inoremap { {}<ESC>i
-
-:inoremap } <c-r>=ClosePair('}')<CR>
-
-:inoremap [ []<ESC>i
-
-:inoremap ] <c-r>=ClosePair(']')<CR>
-
-":inoremap < <><ESC>i
-    
-":inoremap > <c-r>=ClosePair('>')<CR>
-
-:inoremap " ""<ESC>i
-
-:inoremap ' ''<ESC>i
-
-:inoremap ` ``<ESC>i
-
-function ClosePair(char)
-    if getline('.')[col('.') - 1] == a:char
-        return "\<Right>"
-    else
-        return a:char
-    endif
-endf
-
-
-
 
 " Ctrl + K            将光标移到上一行的末尾
 imap  <ESC>kA
@@ -212,13 +178,6 @@ let Tlist_Show_One_File=1                    " 只显示当前文件的tags
 let Tlist_Exit_OnlyWindow=1                  " 如果Taglist窗口是最后一个窗口则退出Vim
 let Tlist_Use_Right_Window=1                 " 在右侧窗口中显示
 
-" tags                函数跳转、代码补全的关键所在，请替换为自己的路径，并去掉最前面的注释符
-"set tags+=D:\Apps\MinGW\include\tags                 " For C/C++
-"set tags+=C:\Develop\Java\src\tags                   " For Java
-"set tags+=C:\Develop\Python\Python27\Lib\tags        " For Python 2.x
-"set tags+=C:\Develop\Python\Python32\Lib\tags        " For Python 3.x
-"set tags+=D:\Apps\SQLite\tags                        " For SQLite
-
 " TxtBrowser          高亮TXT文本文件
 au BufRead,BufNewFile *.txt setlocal ft=txt
 
@@ -234,82 +193,6 @@ let g:vimrc_email='honi.linux@gmail.com'
 let g:vimrc_homepage='http://honi.sourceforge.net'
 
 
-" ======= 编译 && 运行 ======= "
-
-" 编译C源文件
-func! CompileGcc()
-    exec "w"
-    let compilecmd="!gcc -Wall -pedantic -std=c99 "
-    let compileflag="-o %<"
-    exec compilecmd." % ".compileflag
-endfunc
-
-" 编译C++源文件
-func! CompileCpp()
-    exec "w"
-    let compilecmd="!g++ -Wall -pedantic -std=c++98 "
-    let compileflag="-o %<"
-    exec compilecmd." % ".compileflag
-endfunc
-
-" 编译Java源文件
-func! CompileJava()
-    exec "w"
-    exec "!javac %"
-endfunc
-
-" 根据文件类型自动选择相应的编译函数
-func! CompileCode()
-        exec "w"
-        if &filetype == "c"
-            exec "call CompileGcc()"
-        elseif &filetype == "cpp"
-            exec "call CompileCpp()"
-        elseif &filetype == "java"
-            exec "call CompileJava()"
-        elseif &filetype == "lua"
-            exec "!lua %<.lua"
-        elseif &filetype == "perl"
-            exec "!perl %<.pl"
-        elseif &filetype == "python"
-            exec "!python %<.py"
-        elseif &filetype == "ruby"
-            exec "!ruby %<.rb"
-        endif
-endfunc
-
-" 运行可执行文件
-func! RunResult()
-        exec "w"
-        if &filetype == "c"
-            exec "! %<"
-        elseif &filetype == "cpp"
-            exec "! %<"
-        elseif &filetype == "java"
-            exec "!java %<"
-        elseif &filetype == "lua"
-            exec "!lua %<.lua"
-        elseif &filetype == "perl"
-            exec "!perl %<.pl"
-        elseif &filetype == "python"
-            exec "!python %<.py"
-        elseif &filetype == "ruby"
-            exec "!ruby %<.rb"
-        endif
-endfunc
-
-" Ctrl + C 一键保存、编译
-map  :call CompileCode()<CR>
-imap  <ESC>:call CompileCode()<CR>
-vmap  <ESC>:call CompileCode()<CR>
-
-" Ctrl + R 一键保存、运行
-map  :call RunResult()<CR>
-imap  <ESC>:call RunResult()<CR>
-vmap  <ESC>:call RunResult()<CR>
-
-
-" ======= VimWiki ======= "
 
 " 设置编码
 let g:vimwiki_w32_dir_enc = 'utf-8'
@@ -320,15 +203,7 @@ let g:vimwiki_use_mouse = 1
 " 不要将驼峰式词组作为 Wiki 词条
 let g:vimwiki_camel_case = 0
 
-" 声明可以在wiki里面使用的HTML标签
-let g:vimwiki_valid_html_tags='b,i,s,u,sub,sup,kbd,br,hr,div,del,code,red,center,left,right,h4,h5,h6,pre'
+au GuiEnter * set t_vb=
 
-let g:vimwiki_list = [{
-\ 'path': 'D:/Apps/Gvim/mysite/wiki',
-\ 'path_html': 'D:/Apps/Gvim/mysite/html/',
-\ 'html_header': 'D:/Apps/Gvim/mysite/template/header.html',
-\ 'html_footer': 'D:/Apps/Gvim/mysite/template/footer.html',
-\ 'auto_export': 1,
-\ 'nested_syntaxes': {'Asm': 'asm', 'C': 'c', 'C++': 'cpp','Java': 'java', 'Haskell': 'haskell', 'Lua': 'lua', 'Perl': 'perl', 'Python': 'python', 'PHP': 'php', 'HTML': 'html', 'XML': 'xml', 'JavaScript': 'javascript', 'Bash': 'sh', 'Vim': 'vim', 'Make': 'make', 'Automake': 'AUTOMAKE'},}]
 
 
