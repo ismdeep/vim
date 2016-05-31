@@ -95,6 +95,7 @@ set list                     " 显示Tab符，使用一高亮竖线代替
 set listchars=tab:\|\ ,
 
 set clipboard=unnamedplus    " 设置复制和粘帖直接使用系统剪切板
+set noswapfile
 
 syntax enable                " 打开语法高亮
 syntax on                    " 开启文件类型侦测
@@ -135,8 +136,6 @@ source $VIMRUNTIME/delmenu.vim
 source $VIMRUNTIME/menu.vim
 " 解决consle输出乱码
 language messages zh_CN.utf-8
-
-
 
 " Ctrl + K            将光标移到上一行的末尾
 imap  <ESC>kA
@@ -188,11 +187,9 @@ let g:fencview_autodetect=1
 let g:template_path='D:\Apps\Gvim\vimfiles\template\'
 
 " :AuthorInfoDetect   自动添加作者、时间等信息，本质是NERD_commenter && authorinfo的结合
-let g:vimrc_author='honi'
-let g:vimrc_email='honi.linux@gmail.com'
-let g:vimrc_homepage='http://honi.sourceforge.net'
-
-
+let g:vimrc_author='ismdeep'
+let g:vimrc_email='ismdeep@live.com'
+let g:vimrc_homepage='http://www.ismdeep.com'
 
 " 设置编码
 let g:vimwiki_w32_dir_enc = 'utf-8'
@@ -204,6 +201,4 @@ let g:vimwiki_use_mouse = 1
 let g:vimwiki_camel_case = 0
 
 au GuiEnter * set t_vb=
-
-
 
