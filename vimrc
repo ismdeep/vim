@@ -1,8 +1,7 @@
-" -----------------   Author: iCoding
-" -----------------    Email: honi.linux@gmail.com
-" -----------------  WebSite: http://honi.sourceforge.net
+" -----------------   Author: ismdeep
+" -----------------    Email: ismdeep@live.com
+" -----------------  WebSite: http://www.ismdeep.com
 " -----------------     Date: 2012-08-13
-
 " Ctrl + K                   --光标移上一行末尾
 " Ctrl + H                   --光标移行首
 " Ctrl + L                   --光标移行尾
@@ -67,8 +66,8 @@
 
 " colorscheme candy
 " colorscheme codeschool
-colorscheme distinguished
-" colorscheme solarized
+" colorscheme distinguished
+colorscheme solarized
 " colorscheme vividchalk   " vividchalk theme
 " colorscheme desert           " 灰褐色主题
 set guifont=Courier\ New:h10 " 字体 && 字号
@@ -77,7 +76,7 @@ set shiftwidth=4             " 换行时行间交错使用4个空格
 set autoindent               " 自动对齐
 set backspace=2              " 设置退格键可用
 set cindent shiftwidth=4     " 自动缩进4空格
-set smartindent              " 智能自动缩进
+"set smartindent              " 智能自动缩进
 set ai!                      " 设置自动缩进
 set nu!                      " 显示行号
 "set showmatch               " 显示括号配对情况
@@ -95,6 +94,7 @@ set list                     " 显示Tab符，使用一高亮竖线代替
 set listchars=tab:\|\ ,
 
 set clipboard=unnamedplus    " 设置复制和粘帖直接使用系统剪切板
+set noswapfile
 
 syntax enable                " 打开语法高亮
 syntax on                    " 开启文件类型侦测
@@ -136,47 +136,9 @@ source $VIMRUNTIME/menu.vim
 " 解决consle输出乱码
 language messages zh_CN.utf-8
 
-
-
-" Ctrl + K            将光标移到上一行的末尾
-imap  <ESC>kA
-
-" Ctrl + L            将光标移到行尾
-imap  <ESC>A
-
-" Ctrl + H            将光标移到行首
-imap  <ESC>I
-
-" Ctrl + Z            取代ESC模式键
-:inoremap  <ESC>
-
-" Ctrl + S            保存文件
-map  <ESC>:w<CR>
-imap  <ESC>:w<CR>a
-vmap  <ESC>:w<CR>
-
-" Ctrl + E            一步加载语法模板和作者、时间信息 [非插入模式]
-map  <ESC>:LoadTemplate<CR><ESC>:AuthorInfoDetect<CR><ESC>Gi
-vmap  <ESC>:LoadTemplate<CR><ESC>:AuthorInfoDetect<CR><ESC>Gi
-
-" Ctrl + E            在当前行添加C/C++/Java语言的多行注释 [插入模式]
-imap  /*  */<ESC>hhi
-
-
 " wm                  开启文件浏览窗口，对应插件为WinManager
 let g:winManagerWindowLayout='FileExplorer'
 nmap wm :WMToggle<cr>
-
-" MiniBufExplorer     多个文件切换 可使用鼠标双击相应文件名进行切换
-let g:miniBufExplMapWindowNavVim=1
-let g:miniBufExplMapWindowNavArrows=1
-let g:miniBufExplMapCTabSwitchBufs=1
-let g:miniBufExplModSelTarget=1
-
-" :Tlist              调用TagList
-let Tlist_Show_One_File=1                    " 只显示当前文件的tags
-let Tlist_Exit_OnlyWindow=1                  " 如果Taglist窗口是最后一个窗口则退出Vim
-let Tlist_Use_Right_Window=1                 " 在右侧窗口中显示
 
 " TxtBrowser          高亮TXT文本文件
 au BufRead,BufNewFile *.txt setlocal ft=txt
@@ -188,11 +150,9 @@ let g:fencview_autodetect=1
 let g:template_path='D:\Apps\Gvim\vimfiles\template\'
 
 " :AuthorInfoDetect   自动添加作者、时间等信息，本质是NERD_commenter && authorinfo的结合
-let g:vimrc_author='honi'
-let g:vimrc_email='honi.linux@gmail.com'
-let g:vimrc_homepage='http://honi.sourceforge.net'
-
-
+let g:vimrc_author='ismdeep'
+let g:vimrc_email='ismdeep@live.com'
+let g:vimrc_homepage='http://www.ismdeep.com'
 
 " 设置编码
 let g:vimwiki_w32_dir_enc = 'utf-8'
@@ -200,10 +160,5 @@ let g:vimwiki_w32_dir_enc = 'utf-8'
 " 使用鼠标映射
 let g:vimwiki_use_mouse = 1
 
-" 不要将驼峰式词组作为 Wiki 词条
-let g:vimwiki_camel_case = 0
-
 au GuiEnter * set t_vb=
-
-
 
