@@ -10,7 +10,7 @@
 " colorscheme vividchalk   " vividchalk theme
 " colorscheme desert           " 灰褐色主题
 syntax enable
-set background=dark
+" set background=dark
 colorscheme solarized
 set guifont=Courier\ New:h10 " 字体 && 字号
 set tabstop=4                " 设置tab键的宽度
