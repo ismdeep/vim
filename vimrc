@@ -6,9 +6,12 @@
 " colorscheme candy
 " colorscheme codeschool
 " colorscheme distinguished
-"colorscheme solarized
+" colorscheme solarized
 " colorscheme vividchalk   " vividchalk theme
 " colorscheme desert           " 灰褐色主题
+syntax enable
+set background=dark
+colorscheme solarized
 set guifont=Courier\ New:h10 " 字体 && 字号
 set tabstop=4                " 设置tab键的宽度
 set shiftwidth=4             " 换行时行间交错使用4个空格
@@ -27,14 +30,14 @@ set incsearch                " 开启实时搜索功能
 set nowrapscan               " 搜索到文件两端时不重新搜索
 set nocompatible             " 关闭兼容模式
 set vb t_vb=                 " 关闭提示音
-" set cursorline              " 突出显示当前行
+set cursorline              " 突出显示当前行
 set hidden                   " 允许在有未保存的修改时切换缓冲区
 set list                     " 显示Tab符，使用一高亮竖线代替
 set listchars=tab:\|\ ,
 set clipboard=unnamedplus    " 设置复制和粘帖直接使用系统剪切板
 "set noswapfile
 
-syntax enable                " 打开语法高亮
+"syntax enable                " 打开语法高亮
 syntax on                    " 开启文件类型侦测
 filetype indent on           " 针对不同的文件类型采用不同的缩进格式
 "filetype plugin on           " 针对不同的文件类型加载对应的插件
