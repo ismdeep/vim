@@ -11,7 +11,7 @@
 " colorscheme desert           " 灰褐色主题
 syntax enable
 " set background=dark
-colorscheme solarized
+" colorscheme solarized
 set guifont=Courier\ New:h10 " 字体 && 字号
 set tabstop=4                " 设置tab键的宽度
 set shiftwidth=4             " 换行时行间交错使用4个空格
