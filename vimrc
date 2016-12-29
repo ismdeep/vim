@@ -45,6 +45,7 @@ filetype indent on           " 针对不同的文件类型采用不同的缩进�
 set ignorecase               " 自动补全不区分大小写
 
 set writebackup              " 设置无备份文件
+set noswapfile
 set nobackup
 set autochdir                " 设定文件浏览器目录为当前目录
 "set nowrap                  " 设置不自动换行
