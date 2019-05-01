@@ -6,7 +6,7 @@
 " colorscheme candy
 " colorscheme codeschool
 " colorscheme distinguished
-colorscheme solarized
+" colorscheme solarized
 " colorscheme vividchalk   " vividchalk theme
 " colorscheme desert           " 灰褐色主题
 syntax enable
