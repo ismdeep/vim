@@ -1,4 +1,0 @@
-apt-get install vim vim-gnome
-cp vimrc /etc/vim
-cp *.vim /usr/share/vim/vim73[vim74]/colors
-

@@ -67,7 +67,7 @@ set fileencodings=utf-8,gbk,cp936,latin-1
 source $VIMRUNTIME/delmenu.vim
 source $VIMRUNTIME/menu.vim
 " 解决consle输出乱码
-language messages zh_CN.utf-8
+language messages en_US.UTF-8
 
 " wm                  开启文件浏览窗口，对应插件为WinManager
 let g:winManagerWindowLayout='FileExplorer'
