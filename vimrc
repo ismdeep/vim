@@ -1,14 +1,14 @@
-" -----------------   Author: ismdeep
-" -----------------    Email: ismdeep@live.com
-" -----------------  WebSite: http://www.ismdeep.com
+" -----------------   Author: ismdeep <l.jiang.1024@gmail.com>
+" -----------------  WebSite: https://ismdeep.com
 " -----------------     Date: 2012-08-13
+" ------- Last Modified Date: 2020-11-13
 
 " colorscheme candy
 " colorscheme codeschool
 " colorscheme distinguished
 " colorscheme solarized
 " colorscheme vividchalk   " vividchalk theme
-" colorscheme desert           " 灰褐色主题
+colorscheme desert           " 灰褐色主题
 syntax enable
 set background=dark
 " colorscheme solarized
@@ -21,7 +21,7 @@ set cindent shiftwidth=4     " 自动缩进4空格
 set smartindent              " 智能自动缩进
 set ai!                      " 设置自动缩进
 set nu!                      " 显示行号
-set showmatch               " 显示括号配对情况
+" set showmatch               " 显示括号配对情况
 set mouse=a                  " 启用鼠标
 set ruler                    " 右下角显示光标位置的状态行
 set incsearch                " 查找book时，当输入/b时会自动找到
@@ -30,15 +30,19 @@ set incsearch                " 开启实时搜索功能
 set nowrapscan               " 搜索到文件两端时不重新搜索
 set nocompatible             " 关闭兼容模式
 set vb t_vb=                 " 关闭提示音
-set cursorline              " 突出显示当前行
+" set cursorline              " 突出显示当前行
 set hidden                   " 允许在有未保存的修改时切换缓冲区
-set list                     " 显示Tab符，使用一高亮竖线代替
-set listchars=tab:\|\ ,
+" set list                     " 显示Tab符，使用一高亮竖线代替
+" set listchars=tab:\|\ ,
 set clipboard=unnamedplus    " 设置复制和粘帖直接使用系统剪切板
 "set noswapfile
 
-"syntax enable                " 打开语法高亮
-syntax on                    " 开启文件类型侦测
+
+set showcmd
+hi MatchParen ctermbg=Yellow guibg=lightblue
+
+" syntax enable                " 打开语法高亮
+" syntax on                    " 开启文件类型侦测
 filetype indent on           " 针对不同的文件类型采用不同的缩进格式
 "filetype plugin on           " 针对不同的文件类型加载对应的插件
 "filetype plugin indent on    " 启用自动补全
@@ -57,7 +61,6 @@ set cmdheight=2              " 命令行的高度，默认为1，这里设为2
 
 " 每行超过80个的字符用下划线标示
 au BufRead,BufNewFile *.asm,*.c,*.cpp,*.java,*.cs,*.sh,*.lua,*.pl,*.pm,*.py,*.rb,*.hs,*.vim 2match
-
 
 " 设置编码
 set fenc=utf-8
@@ -78,14 +81,6 @@ au BufRead,BufNewFile *.txt setlocal ft=txt
 
 " :FencView           查看文件编码和更改文件编码
 let g:fencview_autodetect=1
-
-" :LoadTemplate       根据文件后缀自动加载模板
-let g:template_path='D:\Apps\Gvim\vimfiles\template\'
-
-" :AuthorInfoDetect   自动添加作者、时间等信息，本质是NERD_commenter && authorinfo的结合
-let g:vimrc_author='ismdeep'
-let g:vimrc_email='ismdeep@live.com'
-let g:vimrc_homepage='http://www.ismdeep.com'
 
 " 设置编码
 let g:vimwiki_w32_dir_enc = 'utf-8'
