@@ -1,13 +1,6 @@
-#ismdeep_vim_profile_shared#
-==========================
+# ismdeep's vimrc
 
-ismdeep_vim_profile_shared
-
-
-##How to install?##
+## How to install?
 How to install vim profile into a linux system?
 
-
-Read the run file, you will get more information.
-
-###########################################
+Copy vimrc file to ~/.vimrc or /etc/vim/vimrc
