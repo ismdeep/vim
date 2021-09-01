@@ -1,7 +1,7 @@
 " -----------------   Author: ismdeep <l.jiang.1024@gmail.com>
 " -----------------  WebSite: https://ismdeep.com
 " -----------------     Date: 2012-08-13
-" ------- Last Modified Date: 2020-11-13
+" ------- Last Modified Date: 2021-09-01
 
 " colorscheme candy
 " colorscheme codeschool
@@ -32,10 +32,10 @@ set nocompatible             " 关闭兼容模式
 set vb t_vb=                 " 关闭提示音
 " set cursorline              " 突出显示当前行
 set hidden                   " 允许在有未保存的修改时切换缓冲区
-" set list                     " 显示Tab符，使用一高亮竖线代替
-" set listchars=tab:\|\ ,
+set list                     " 显示Tab符，使用一高亮竖线代替
+set listchars=tab:\|\ ,
 set clipboard=unnamedplus    " 设置复制和粘帖直接使用系统剪切板
-"set noswapfile
+set noswapfile
 
 
 set showcmd
